@@ -1,6 +1,6 @@
 [package]
-name = "groupme_hvz_rs"
-version = "0.0.2"
+name = "groupme_targeted_autokick"
+version = "0.0.1"
 authors = ["Milo Mirate <mmirate@gmx.com>"]
 
 [dependencies]

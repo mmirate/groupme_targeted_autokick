@@ -1,19 +1,17 @@
 {
-  "name": "GroupMe ↔ GA Tech HvZ",
-  "description": "Scraper for the GA Tech HvZ website which announces its results on GroupMe",
-  "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f6/HAL9000.svg",
-  "repository": "https://github.com/mmirate/groupme_hvz_rs",
+  "name": "GroupMe Targeted Autokicker",
+  "description": "Anyone with a specified nickname shall be kicked from your Group.",
+  "logo": "https://commons.wikimedia.org/wiki/File:Snipers_Compete_in_Sniper_Stalking_Event_Image_1_of_6.jpg",
+  "repository": "https://github.com/mmirate/groupme_targeted_autokick",
   "success_url": "/welcome",
   "keywords": ["rust", "groupme"],
   "env": {
-    "GATECH_USERNAME": {"description": "Georgia Tech username", "required": true},
-    "GATECH_PASSWORD": {"description": "Georgia Tech password", "required": true},
     "GROUPME_API_KEY": {"description": "Your \"Access Token\", obtainable by logging into https://dev.groupme.com and clicking the \"Access Token\" button at the top-right.", "required": true},
-    "FACTION_GROUP_NAME": {"description": "The exact name of your faction's Group.", "required": true},
-    "CNC_GROUP_NAME": {"description": "The exact name of a Group containing just you. (A Group by this name will be created if you don't already have one.)", "required": true},
+    "GROUP_NAME": {"description": "The exact name of your Group.", "required": true},
+    "TARGET_NAME": {"description": "The exact nickname of the troublemaker. Warning: inexact match will cause failure-to-kick.", "required": true},
     "RUST_BACKTRACE": {"description": "(Leave this set to \"1\".)", "value": "1"}
   },
-  "buildpacks": [ { "url": "https://github.com/mmirate/heroku-buildpack-rust#patch-1" } ],
+  "buildpacks": [ { "url": "https://github.com/emk/heroku-buildpack-rust" } ],
   "formation": {
     "web": { "quantity": 1, "size": "free" },
     "worker": { "quantity": 1, "size": "free" }

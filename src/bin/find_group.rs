@@ -1,8 +1,8 @@
 extern crate rustc_serialize;
 extern crate clap;
-extern crate groupme_hvz_rs;
-use groupme_hvz_rs::*;
-use groupme_hvz_rs::errors::*;
+extern crate groupme_targeted_autokick;
+use groupme_targeted_autokick::*;
+use groupme_targeted_autokick::errors::*;
 
 #[macro_use] extern crate error_chain;
 
